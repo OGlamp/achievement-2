@@ -27,7 +27,7 @@ let pokemonRepository = (function () {
     let listBtn = document.createElement("button");
     let btnImg = document.createElement("img");
 
-    //Set butten text to pokemon name
+    //Set button text to pokemon name
     listBtn.innerText = pokemon.name;
     listBtn.classList.add("pokemon-list__item");
 
@@ -71,13 +71,10 @@ let pokemonRepository = (function () {
 
   function clickSearch() {
     let searchBtn = document.getElementById("searchBtn");
-
     searchBtn.addEventListener("click", function () {
       let result = document.getElementById("searchBtn");
       result.href = "";
-
       let searchInput = document.getElementById("exampleDataList");
-
       searchData(searchInput.value.toLowerCase());
     });
   }
@@ -127,14 +124,14 @@ let pokemonRepository = (function () {
 
       // pokemon Ability
       let pokemonAbility = document.createElement("h3");
-      pokemonAbility.innerText = "Ability:";
+      pokemonAbility.innerText = "Abilities:";
 
       let abilityValue = document.createElement("p");
-      abilityValue.innerText = pokemon.ability[0].ability.name;
+      abilityValue.innerText = pokemon.abilities[0].ability.name;
       // if there is second ability
       let abilityValue2 = document.createElement("p");
       if (pokemon.ability.length > 1) {
-        abilityValue2.innerText = pokemon.ability[1].ability.name;
+        abilityValue2.innerText = pokemon.abilities[1].ability.name;
       } else {
         abilityValue2.innerText = "";
       }
@@ -193,6 +190,13 @@ let pokemonRepository = (function () {
     buttons.addEventListener("click", function () {
       showDetails(pokemon);
     });
+  }
+
+  // function to change listBtn background color to match the pokemon type via css var
+  function btnHover(buttons, pokemon, typeColor) {
+    // add event listener to listen for cursor hover over listBtn
+    buttons.addEventListener;
+    // add function to change background color based off of pokemon type
   }
 
   //load list of pokemon from API
