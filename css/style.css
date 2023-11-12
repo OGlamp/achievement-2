@@ -44,23 +44,21 @@ body {
 }
 
 /* header start */
-#pokemon-logo {
-  position: relative;
-  height: 75px;
-}
 .page-header {
-  position: relative;
+  position: fixed;
   display: flex;
   width: 100%;
-  padding: 0 20px 0 20px;
+  padding: 0 100 0 100;
   background-color: var(--primary-color);
   color: var(--text-color);
   flex-wrap: nowrap;
   align-items: center;
   height: 100px;
 }
-.page-header .page-header__item {
-  flex: 0 1 100px;
+
+#pokemon-logo {
+  position: relative;
+  height: 75px;
 }
 
 /* Menu item */
@@ -75,19 +73,17 @@ li a:focus {
 }
 
 /* search bar heading + btn*/
-search-bar_contaier {
-  padding-top: 150px;
+.search-bar_contaier {
+  margin-top: 200px;
 }
 
-h1 {
+.search-bar__heading {
+  text-align: center;
+  margin: 0.63 rem;
   font-size: 25px;
   font-weight: 600;
   color: var(--text-color);
   margin-top: 0.67 rem;
-}
-.search-bar__heading {
-  text-align: center;
-  margin: 0.63 rem;
 }
 
 .search-bar__form {

@@ -195,7 +195,7 @@ let pokemonRepository = (function () {
   // function to change listBtn background color to match the pokemon type via css var
   function btnHover(buttons, pokemon, typeColor) {
     // add event listener to listen for cursor hover over listBtn
-    buttons.addEventListener;
+    buttons.addEventListener("mouseover", function () {});
     // add function to change background color based off of pokemon type
   }
 
