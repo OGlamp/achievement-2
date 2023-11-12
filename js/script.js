@@ -61,9 +61,13 @@ let pokemonRepository = (function () {
 
     searchResult.forEach(function (resultItem) {
       let result = document.getElementById("searchBtn");
-      result.href = `#${resultItem.id}`;
-    });
+      result.href = `${resultItem.id}`;
 
+      const elementToScrollTo = document.getElementById(result.href);
+      if (elementToScrollTo) {
+        elementToScrollTo.scrollIntoView({ behavior: "smooth" });
+      }
+    });
     if (searchResult.length === 0) {
       alert("Invalid Pokemon! Try Again");
     }

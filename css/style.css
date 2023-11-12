@@ -34,6 +34,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+h1 {
+  color: var(--text-color);
+}
 /* Body Selector */
 body {
   background-color: var(--second-color);
@@ -48,12 +52,16 @@ body {
   position: fixed;
   display: flex;
   width: 100%;
-  padding: 0 100 0 100;
   background-color: var(--primary-color);
-  color: var(--text-color);
   flex-wrap: nowrap;
   align-items: center;
   height: 100px;
+  z-index: 10;
+}
+
+.navbar {
+  position: relative;
+  flex-direction: end;
 }
 
 #pokemon-logo {
@@ -63,8 +71,9 @@ body {
 
 /* Menu item */
 li a {
+  float: right;
   text-decoration: none;
-  color: var(--link-color);
+  color: var(--text-color);
 }
 
 li a:hover,
@@ -72,9 +81,14 @@ li a:focus {
   color: var(--third-color);
 }
 
+.nav-link {
+  float: right;
+}
+
 /* search bar heading + btn*/
-.search-bar_contaier {
-  margin-top: 200px;
+.search-bar_container {
+  position: relative;
+  padding-top: 200px;
 }
 
 .search-bar__heading {
