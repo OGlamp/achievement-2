@@ -65,7 +65,10 @@ let pokemonRepository = (function () {
 
       const elementToScrollTo = document.getElementById(result.href);
       if (elementToScrollTo) {
-        elementToScrollTo.scrollIntoView({ behavior: "smooth" });
+        elementToScrollTo.scrollIntoView({
+          block: "center",
+          behavior: "smooth",
+        });
       }
     });
     if (searchResult.length === 0) {
@@ -92,7 +95,7 @@ let pokemonRepository = (function () {
       modalContainer.innerHTML = "";
 
       //Create modal
-      let pokemonModal = document.createElement("div");
+      let modal = document.createElement("div");
       modal.classList.add("pokemon-modal");
 
       //Add close btn
@@ -126,31 +129,19 @@ let pokemonRepository = (function () {
         TypeValue2.innerText = "";
       }
 
-      // pokemon Ability
-      let pokemonAbility = document.createElement("h3");
-      pokemonAbility.innerText = "Abilities:";
-
-      let abilityValue = document.createElement("p");
-      abilityValue.innerText = pokemon.abilities[0].ability.name;
-      // if there is second ability
-      let abilityValue2 = document.createElement("p");
-      if (pokemon.ability.length > 1) {
-        abilityValue2.innerText = pokemon.abilities[1].ability.name;
-      } else {
-        abilityValue2.innerText = "";
-      }
-
       //Add img
       let modalImg = document.createElement("img");
       modalImg.src = pokemon.imageUrl;
+      modalImg.classList.add("cardImg");
       // create <div> to hold img
       let imgCard = document.createElement("div");
       imgCard.classList.add("card");
 
       //Append the <img> to imgCard to cardHolder
-      imgCard.appendChild(ModalImg);
+      imgCard.appendChild(modalImg);
 
       // append modal content to div
+      modal.appendChild(imgCard);
       modal.appendChild(closeButton);
       modal.appendChild(modalName);
       modal.appendChild(pokemonHeight);
@@ -158,11 +149,8 @@ let pokemonRepository = (function () {
       modal.appendChild(pokemonType);
       modal.appendChild(TypeValue);
       modal.appendChild(TypeValue2);
-      modal.appendChild(pokemonAbility);
-      modal.appendChild(abilityValue);
-      modal.appendChild(abilityValue2);
 
-      modalContainer.appendChild(pokemonModal);
+      modalContainer.appendChild(modal);
 
       modalContainer.classList.add("is-visible");
 
@@ -194,13 +182,6 @@ let pokemonRepository = (function () {
     buttons.addEventListener("click", function () {
       showDetails(pokemon);
     });
-  }
-
-  // function to change listBtn background color to match the pokemon type via css var
-  function btnHover(buttons, pokemon, typeColor) {
-    // add event listener to listen for cursor hover over listBtn
-    buttons.addEventListener("mouseover", function () {});
-    // add function to change background color based off of pokemon type
   }
 
   //load list of pokemon from API
