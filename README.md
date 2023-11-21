@@ -11,6 +11,9 @@ In the project JS, HTML, CSS and Bootstrap was used.
 API for the application
 API: https://pokeapi.co/
 
+Link to Application
+https://oglamp.github.io/achievement-2/
+
 User Stories for the application
 As a user, I want to click on the image of the Pokemon so that I can see more details about this specific Pokemon.
 
